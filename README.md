@@ -21,3 +21,12 @@ Valuables can be traded remotely using:
 - Official Expansions: The mod has several expansions, including integrations with Autotsar mods. Explore the full collection [here](https://steamcommunity.com/workshop/filedetails/?id=2750649304).
 
 - Supported Languages: English, Russian, Chinese, Spanish, and Portuguese.
+
+📊 Stats
+| Metric                      | Value    |
+| --------------------------- | -------- |
+| ⬇️ **Current Subscribers**  | 65,000+  |
+| ⬇️ **All-Time Unique Subs** | 120,000+ |
+| 👍 **Total Ratings**        | 580+     |
+| 🏆 **Total Favorites**      | 3,300+   |
+| ⭐ **Overall Rating**        | ⭐⭐⭐⭐⭐    |
