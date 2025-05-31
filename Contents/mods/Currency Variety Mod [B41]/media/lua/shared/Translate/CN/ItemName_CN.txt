@@ -1,0 +1,8 @@
+ItemName_CN = {
+
+ItemName_Base.GoldBar = "金条",
+ItemName_Base.SilverBar = "银条",
+ItemName_Base.GoldScraps = "金碎块",
+ItemName_Base.SilverScraps = "银碎块",
+ItemName_Base.GemScrap = "珠宝碎块",
+}

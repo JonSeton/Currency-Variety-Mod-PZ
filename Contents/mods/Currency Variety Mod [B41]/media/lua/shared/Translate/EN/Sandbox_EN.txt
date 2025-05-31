@@ -1,0 +1,16 @@
+Sandbox_EN = {
+    Sandbox_CurrencyVariety = "Currency Variety",
+
+    Sandbox_ScrapCount = "Scrap Required to Make Bar",
+    Sandbox_RadioRequired = "Require a Radio to Trade",
+
+    Sandbox_CanTradeViaTRMWT = "Can Use Toys-R-Mine Walkie Talkie",
+    Sandbox_CanTradeViaVTWT = "Can Use ValuTech Walkie Talkie",
+    Sandbox_CanTradeViaPTWT = "Can Use Premium Tech Walkie Talkie",
+    Sandbox_CanTradeViaTWT = "Can Use Tactical Walkie Talkie",
+    Sandbox_CanTradeViaUSAWT = "Can Use US Army Walkie Talkie",
+    Sandbox_CanTradeViaMWT = "Can Use Makeshift Walkie Talkie",
+    Sandbox_CanTradeViaPTHR = "Can Use Premium Technologies Ham Radio",
+    Sandbox_CanTradeViaUSACHR = "Can Use US ARMY COMM. Ham Radio",
+    Sandbox_CanTradeViaMHR = "Can Use Makeshift Ham Radio",
+}

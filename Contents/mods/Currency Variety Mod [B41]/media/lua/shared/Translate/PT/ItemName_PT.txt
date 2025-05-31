@@ -1,0 +1,8 @@
+ItemName_PT = {
+
+ItemName_Base.GoldBar = "Barra de ouro",
+ItemName_Base.SilverBar = "Barra de prata",
+ItemName_Base.GoldScraps = "ouro Recortes",
+ItemName_Base.SilverScraps = "prata Recortes",
+ItemName_Base.GemScrap = "gem Recortes",
+}

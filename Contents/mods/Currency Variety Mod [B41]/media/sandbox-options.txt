@@ -1,0 +1,67 @@
+VERSION = 1,
+
+option ScrapCount
+{
+	type = integer, min = 0, max = 999, default = 50,
+	page = CurrencyVariety, translation = ScrapCount,
+}
+
+option RadioRequired
+{
+	type = boolean, default = true,
+	page = CurrencyVariety, translation = RadioRequired,
+}
+
+option CanTradeViaTRMWT
+{
+	type = boolean, default = false,
+	page = CurrencyVariety, translation = CanTradeViaTRMWT,
+}
+
+option CanTradeViaVTWT
+{
+	type = boolean, default = false,
+	page = CurrencyVariety, translation = CanTradeViaVTWT,
+}
+
+option CanTradeViaPTWT
+{
+	type = boolean, default = false,
+	page = CurrencyVariety, translation = CanTradeViaPTWT,
+}
+
+option CanTradeViaTWT
+{
+	type = boolean, default = true,
+	page = CurrencyVariety, translation = CanTradeViaTWT,
+}
+
+option CanTradeViaUSAWT
+{
+	type = boolean, default = true,
+	page = CurrencyVariety, translation = CanTradeViaUSAWT,
+}
+
+option CanTradeViaMWT
+{
+	type = boolean, default = false,
+	page = CurrencyVariety, translation = CanTradeViaMWT,
+}
+
+option CanTradeViaPTHR
+{
+	type = boolean, default = True,
+	page = CurrencyVariety, translation = CanTradeViaPTHR,
+}
+
+option CanTradeViaUSACHR
+{
+	type = boolean, default = true,
+	page = CurrencyVariety, translation = CanTradeViaUSACHR,
+}
+
+option CanTradeViaMHR
+{
+	type = boolean, default = true,
+	page = CurrencyVariety, translation = CanTradeViaMHR,
+}

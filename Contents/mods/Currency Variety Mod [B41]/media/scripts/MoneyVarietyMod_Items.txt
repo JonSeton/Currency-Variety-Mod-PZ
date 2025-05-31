@@ -1,0 +1,367 @@
+module Base
+{
+  item GoldBar
+      {
+          Weight    	   	= 1,
+          DisplayName     = Gold Bar,
+          icon 			      = GoldBar,
+          Type        		= Normal,
+          WorldStaticModel = Gold_Ingot,
+      }
+
+  item SilverBar
+      {
+          Weight    		  = 1,
+          DisplayName     = Silver Bar,
+          icon 			      = SilverBar,
+          Type    	     	= Normal,
+          WorldStaticModel = Silver_Ingot,
+      }
+
+  item GoldScraps
+      {
+          Weight    	   	= .02,
+          DisplayName     = Gold Scraps,
+          icon 			      = GoldScraps,
+          Type    	     	= Normal,
+          WorldStaticModel = Gold_Scrap,
+      }
+
+  item SilverScraps
+      {
+          Weight    	   	= .02,
+          DisplayName     = Silver Scraps,
+          icon 		       	= SilverScraps,
+          Type        		= Normal,
+          WorldStaticModel = Silver_Scrap,
+      }
+
+  item GemScrap
+      {
+          Weight    	   	= .01,
+          DisplayName     = Gems,
+          icon 		       	= Gems,
+          Type        		= Normal,
+      }
+
+  item Pearls
+      {
+          Weight    	   	= .01,
+          DisplayName     = Pearls,
+          icon 		       	= Pearls,
+          Type        		= Normal,
+      }
+
+  /****************************** Cars ******************************/
+
+  item ChevalierCeriseWagon
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Cerise Wagon + Keys,
+          icon 		       	= ChevalierCeriseWagon,
+          Type        		= Normal,
+      }
+
+  item ChevalierCeriseWagonWood
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Cerise Wagon Wood Sides + Keys,
+          icon 		       	= ChevalierCeriseWagonWood,
+          Type        		= Normal,
+      }
+
+  item ChevalierCossette
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Cossette + Keys,
+          icon 		       	= ChevalierCossette,
+          Type        		= Normal,
+      }
+
+  item ChevalierD6
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier D6 + Keys,
+          icon 		       	= ChevalierD6,
+          Type        		= Normal,
+      }
+
+  item ChevalierD6Fire
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier D6 Fire + Keys,
+          icon 		       	= ChevalierD6Fire,
+          Type        		= Normal,
+      }
+
+  item ChevalierD6Mccoy
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier D6 McCoy Logging + Keys,
+          icon 		       	= ChevalierD6Mccoy,
+          Type        		= Normal,
+      }
+
+  item ChevalierD6Ranger
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier D6 Ranger + Keys,
+          icon 		       	= ChevalierD6Ranger,
+          Type        		= Normal,
+      }
+
+  item ChevalierDart
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Dart + Keys,
+          icon 		       	= ChevalierDart,
+          Type        		= Normal,
+      }
+
+  item ChevalierNyalaGreenTaxi
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala Green Taxi + Keys,
+          icon 		       	= ChevalierNyalaGreenTaxi,
+          Type        		= Normal,
+      }
+
+  item ChevalierNyala
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala + Keys,
+          icon 		       	= ChevalierNyala,
+          Type        		= Normal,
+      }
+
+  item ChevalierNyalaPolice
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala Police + Keys,
+          icon 		       	= ChevalierNyalaPolice,
+          Type        		= Normal,
+      }
+
+  item ChevalierNyalaRanger
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala Ranger + Keys,
+          icon 		       	= ChevalierNyalaRanger,
+          Type        		= Normal,
+      }
+
+  item ChevalierNyalaYellowTaxi
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala Yellow Taxi + Keys,
+          icon 		       	= ChevalierNyalaYellowTaxi,
+          Type        		= Normal,
+      }
+
+  item ChevalierPrimani
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Primani + Keys,
+          icon 		       	= ChevalierPrimani,
+          Type        		= Normal,
+      }
+
+  item ChevalierStepVan
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Step Van + Keys,
+          icon 		       	= ChevalierStepVan,
+          Type        		= Normal,
+      }
+
+  item ChevalierStepVanMail
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Step Van Mail + Keys,
+          icon 		       	= ChevalierStepVanMail,
+          Type        		= Normal,
+      }
+
+  item ChevalierStepVanScarlet
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Step Van Scarlet Oak Distillery + Keys,
+          icon 		       	= ChevalierStepVanScarlet,
+          Type        		= Normal,
+      }
+  item ChevalierStepVanHerald
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Step Van Kentucky Herald + Keys,
+          icon 		       	= ChevalierStepVanHerald,
+          Type        		= Normal,
+      }
+
+  item DashBulldriver
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Bulldriver + Keys,
+          icon 		       	= DashBulldriver,
+          Type        		= Normal,
+      }
+
+  item DashBulldriverFire
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Bulldriver Fire Dept. + Keys,
+          icon 		       	= DashBulldriverFire,
+          Type        		= Normal,
+      }
+
+  item DashBulldriverMcCoy
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Bulldriver McCoy Logging + Keys,
+          icon 		       	= DashBulldriverMcCoy,
+          Type        		= Normal,
+      }
+
+  item DashBulldriverPolice
+      {
+          Weight    	   	= .01,
+          DisplayName     = Chevalier Nyala Police + Keys,
+          icon 		       	= DashBulldriverPolice,
+          Type        		= Normal,
+      }
+
+  item DashBulldriverRanger
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Bulldriver Ranger + Keys,
+          icon 		       	= DashBulldriverRanger,
+          Type        		= Normal,
+      }
+
+  item DashElite
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Elite + Keys,
+          icon 		       	= DashElite,
+          Type        		= Normal,
+      }
+
+  item DashRancher
+      {
+          Weight    	   	= .01,
+          DisplayName     = Dash Rancher + Keys,
+          icon 		       	= DashRancher,
+          Type        		= Normal,
+      }
+
+  item FranklinAllTerrain
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin All Terrain + Keys,
+          icon 		       	= FranklinAllTerrain,
+          Type        		= Normal,
+      }
+
+  item FranklinValuline
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline + Keys,
+          icon 		       	= FranklinValuline,
+          Type        		= Normal,
+      }
+
+  item FranklinValuline3N
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline 3N News + Keys,
+          icon 		       	= FranklinValuline3N,
+          Type        		= Normal,
+      }
+
+  item FranklinValuline6Seater
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline 6 Seater + Keys,
+          icon 		       	= FranklinValuline6Seater,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineAmbulance
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Ambulance + Keys,
+          icon 		       	= FranklinValulineAmbulance,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineFossoil
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Fossoil + Keys,
+          icon 		       	= FranklinValulineFossoil,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineKnox
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Knox + Keys,
+          icon 		       	= FranklinValulineKnox,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineLectroMax
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Lectro Max + Keys,
+          icon 		       	= FranklinValulineLectroMax,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineMass
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Mass + Keys,
+          icon 		       	= FranklinValulineMass,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineRadioVan
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Radio Van + Keys,
+          icon 		       	= FranklinValulineRadioVan,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineSpiffo
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Spiffo + Keys,
+          icon 		       	= FranklinValulineSpiffo,
+          Type        		= Normal,
+      }
+
+  item FranklinValulineTransit
+      {
+          Weight    	   	= .01,
+          DisplayName     = Franklin Valuline Transit + Keys,
+          icon 		       	= FranklinValulineTransit,
+          Type        		= Normal,
+      }
+
+  item MastersonHorizon
+      {
+          Weight    	   	= .01,
+          DisplayName     = Masterson Horizon + Keys,
+          icon 		       	= MastersonHorizon,
+          Type        		= Normal,
+      }
+
+  item MerciaLang4000
+      {
+          Weight    	   	= .01,
+          DisplayName     = Mercia Lang 4000 + Keys,
+          icon 		       	= MerciaLang4000,
+          Type        		= Normal,
+      }
+}

@@ -1,0 +1,1155 @@
+module MoneyVariety
+{
+  imports
+  {
+    Base
+  }
+
+  /****************************** Crafting ******************************/
+    recipe Make Gold Bar
+    {
+       GoldScraps=50,
+       keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:GoldBar,
+  	   Sound:Hammering,
+       Time:150.0,
+       Category:Survivalist,
+    }
+
+    recipe Make Silver Bar
+    {
+       SilverScraps=50,
+       keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:SilverBar,
+  	   Sound:Hammering,
+       Time:150.0,
+       Category:Survivalist,
+    }
+
+    recipe Break Apart Gold Bar
+    {
+       GoldBar,
+       keep [Recipe.GetItemTypes.Hammer],
+
+       Result:GoldScraps = 50,
+       Sound:Hammering,
+       Time:150.0,
+       Category:Survivalist,
+    }
+
+    recipe Break Apart Silver Bar
+    {
+       SilverBar,
+       keep [Recipe.GetItemTypes.Hammer],
+
+       Result:SilverScraps = 50,
+       Sound:Hammering,
+       Time:150.0,
+       Category:Survivalist,
+    }
+
+  /****************************** Harvesting ******************************/
+
+    recipe Harvest Gold
+    {
+        Necklace_Gold/Necklace_GoldRuby/NecklaceLong_Gold/NoseRing_Gold/NoseStud_Gold/Earring_LoopLrg_Gold/Earring_LoopMed_Gold/Earring_LoopSmall_Gold_Both/Earring_LoopSmall_Gold_Top/Earring_Stud_Gold/Ring_Right_MiddleFinger_Gold/Ring_Left_MiddleFinger_Gold/Ring_Right_RingFinger_Gold/Ring_Left_RingFinger_Gold/WristWatch_Right_ClassicGold/WristWatch_Left_ClassicGold/Bracelet_BangleRightGold/Bracelet_BangleLeftGold/Bracelet_ChainRightGold/Bracelet_ChainLeftGold/BellyButton_DangleGold/BellyButton_RingGold/BellyButton_StudGold/BellyButton_StudGoldDiamond,
+        keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:GoldScraps,
+  	   Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+       OnCreate:GoldCrafting_OnCreate,
+    }
+
+    recipe Harvest Gem
+    {
+        Necklace_Choker_Sapphire/Necklace_Choker_Diamond/Earring_Stone_Sapphire/Earring_Stone_Emerald/Earring_Stone_Ruby/Earring_Dangly_Sapphire/Earring_Dangly_Emerald/Earring_Dangly_Ruby/Earring_Dangly_Diamond,
+        keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:GemScrap,
+  	   Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+    }
+
+    recipe Harvest Gold & Gem
+    {
+        Necklace_GoldRuby/Necklace_GoldDiamond/NecklaceLong_GoldDiamond/Ring_Right_MiddleFinger_GoldRuby/Ring_Left_MiddleFinger_GoldRuby/Ring_Right_RingFinger_GoldRuby/Ring_Left_RingFinger_GoldRuby/Ring_Right_MiddleFinger_GoldDiamond/Ring_Left_MiddleFinger_GoldDiamond/Ring_Right_RingFinger_GoldDiamond/Ring_Left_RingFinger_GoldDiamond/BellyButton_DangleGoldRuby/BellyButton_RingGoldDiamond/BellyButton_RingGoldRuby,
+        keep [Recipe.GetItemTypes.Hammer],
+
+       Result:GoldScraps,
+       Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+       OnCreate:GoldGemCrafting_OnCreate,
+    }
+    recipe Harvest Silver
+    {
+       Locket/Necklace_Silver/Necklace_SilverCrucifix/NoseRing_Silver/NoseStud_Silver/Earring_LoopLrg_Silver/Earring_LoopMed_Silver/Earring_LoopSmall_Silver_Both/Earring_LoopSmall_Silver_Top/Earring_Stud_Silver/Ring_Right_MiddleFinger_Silver/Ring_Left_MiddleFinger_Silver/Ring_Right_RingFinger_Silver/Ring_Left_RingFinger_Silver/Bracelet_BangleRightSilver/Bracelet_BangleLeftSilver/Bracelet_ChainRightSilver/Bracelet_ChainLeftSilver/NecklaceLong_Silver/BellyButton_DangleSilver/BellyButton_RingSilver/BellyButton_StudSilver,
+       keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:SilverScraps,
+  	   Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+       OnCreate:SilverCrafting_OnCreate,
+    }
+
+    recipe Harvest Silver & Gem
+    {
+       Necklace_SilverSapphire/Necklace_SilverDiamond/NecklaceLong_SilverEmerald/NecklaceLong_SilverSapphire/NecklaceLong_SilverDiamond/Ring_Right_MiddleFinger_SilverDiamond/Ring_Left_MiddleFinger_SilverDiamond/Ring_Right_RingFinger_SilverDiamond/Ring_Left_RingFinger_SilverDiamond/BellyButton_DangleSilverDiamond/BellyButton_RingSilverDiamond/BellyButton_RingSilverRuby/BellyButton_StudSilverDiamond,
+       keep [Recipe.GetItemTypes.Hammer],
+
+  	   Result:SilverScraps,
+  	   Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnGiveXP:Recipe.OnGiveXP.MetalWelding10,
+       OnCreate:SilverGemCrafting_OnCreate,
+    }
+
+    recipe Harvest Pearls
+    {
+       Necklace_Pearl/Earring_Pearl/Earring_Dangly_Pearl,
+       keep [Recipe.GetItemTypes.Hammer],
+
+       Result:Pearls=2,
+       Sound:Hammering,
+       Time:100.0,
+       Category:Survivalist,
+       OnCreate:PearlCrafting_OnCreate,
+    }
+
+  /****************************** Gem Purchase Options ******************************/
+
+    recipe Sell 1 Gems for Salt
+    {
+         GemScrap=1,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:Salt,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 1 Gems for Pepper
+    {
+         GemScrap=1,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+    	   Result:Pepper,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 3 Gems for Sugar
+    {
+         GemScrap=3,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+    	   Result:Sugar,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 3 Gems for Soap
+    {
+         GemScrap=3,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:Soap2,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Strawberry Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:StrewberrieBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Tomato Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:TomatoBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Potato Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:PotatoBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Broccoli Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:BroccoliBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Cabbage Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:CabbageBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Carrot Seeds
+    {
+       GemScrap=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:CarrotBagSeed,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Milk
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:Milk,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Amplifier
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:Amplifier,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Battery
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:Battery,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Electrical Wiring
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ElectricWire,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Electronics Scrap
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ElectronicsScrap,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Motion Sensor
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:MotionSensor,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 5 Gems for Light Bulb
+    {
+         GemScrap=5,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:LightBulb,
+         Time:10.0,
+         Category:Trading,
+    }
+
+    recipe Sell 10 Gems for Box of Screws
+    {
+       GemScrap=10,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:ScrewsBox,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 10 Gems for Box of Paperclips
+    {
+       GemScrap=10,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:PaperclipBox,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 10 Gems for Box of Nails
+    {
+       GemScrap=10,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:NailsBox,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 10 Gems for Box of Jars
+    {
+       GemScrap=10,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:BoxOfJars,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 15 Gems for Welding Rods
+    {
+       GemScrap=15,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:WeldingRods,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 20 Gems for Padlock
+    {
+       GemScrap=20,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Padlock,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of Shotgun Shells
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:ShotgunShellsBox,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .223 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:223Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .308 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:308Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .38 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bullets38Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .44 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bullets44Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .45 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bullets45Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of 9mm Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bullets9mmBox,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 25 Gems for Box of .556 Bullets
+    {
+       GemScrap=25,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:556Box,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 100 Gems for Large Backpack
+    {
+       GemScrap=100,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bag_ALICEpack,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 100 Gems for Military Backpack
+    {
+       GemScrap=100,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Bag_ALICEpack_Army,
+       Time:10.0,
+       Category:Trading,
+    }
+
+  /****************************** Silver Purchase Options ******************************/
+    recipe Sell 1 Silver Bar for a Hand Axe
+    {
+       SilverBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:HandAxe,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 1 Silver Bar for a Mouse Trap
+    {
+       SilverBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:TrapMouse,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 1 Silver Bar for Antibiotics
+    {
+       SilverBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:Antibiotics,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 1 Silver Bar for Hammer
+    {
+       SilverBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Hammer,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 1 Silver Bar for Saw
+    {
+       SilverBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Saw,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Silver Bars for an Axe
+    {
+       SilverBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:Axe,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Silver Bars for an Fishing Rod
+    {
+       SilverBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:FishingRod,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Silver Bars for an Fishing Net Trap
+    {
+       SilverBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:FishingNet,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 3 Silver Bars for an Wood Axe
+    {
+       SilverBar=3,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:WoodAxe,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Silver Bars for an Sledgehammer
+    {
+       SilverBar=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+  	   Result:Sledgehammer,
+       Time:10.0,
+       Category:Trading,
+    }
+
+  /****************************** Gold  Purchase Options ******************************/
+    recipe Sell 1 Gold Bar for a Gas Can
+    {
+       GoldBar=1,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:PetrolCan,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Gold Bars for a Car Battery Charger
+    {
+       GoldBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:CarBatteryCharger,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Gold Bars for a Magnum
+    {
+       GoldBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Revolver_Long,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 2 Gold Bars for a P36 Revolver
+    {
+       GoldBar=2,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Revolver_Short,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 3 Gold Bars for a Machete
+    {
+       GoldBar=3,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Machete,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 3 Gold Bars for a JS-2000 Shotgun
+    {
+       GoldBar=3,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Shotgun,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 4 Gold Bars for a Katana
+    {
+       GoldBar=4,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Katana,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gold Bars for Generator
+    {
+       GoldBar=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:Generator,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gold Bars for MSR700 Varmint Rifle
+    {
+       GoldBar=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:VarmintRifle,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 5 Gold Bars for MSR788 Hunting Rifle
+    {
+       GoldBar=5,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:HuntingRifle,
+       Time:10.0,
+       Category:Trading,
+    }
+
+    recipe Sell 6 Gold Bars for M14
+    {
+       GoldBar=6,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:AssaultRifle2,
+       Time:10.0,
+       Category:Trading,
+       OnCreate:m14Purchase_OnCreate,
+    }
+
+    recipe Sell 7 Gold Bars for M16
+    {
+       GoldBar=7,
+       keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+       Result:AssaultRifle,
+       Time:10.0,
+       Category:Trading,
+       OnCreate:m16Purchase_OnCreate,
+    }
+
+  /****************************** Pearl Purchase Options ******************************/
+
+    recipe Sell 25 Pearls for Masterson Horizon
+    {
+         Pearls=25,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:MastersonHorizon,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingMH_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 25 Pearls for Chevalier Dart
+    {
+         Pearls=25,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierDart,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCD_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 40 Pearls for Chevalier Cerise Wagon
+    {
+         Pearls=40,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierCeriseWagon,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCCWN_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 40 Pearls for Chevalier Cerise Wagon with Wood Sidings
+    {
+         Pearls=40,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierCeriseWagonWood,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCCWWS_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 45 Pearls for Chevalier Nyala
+    {
+         Pearls=45,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierNyala,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCNN_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 45 Pearls for Chevalier Nyala Ranger
+    {
+         Pearls=45,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierNyalaRanger,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCNR_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 45 Pearls for Chevalier Nyala Police
+    {
+         Pearls=45,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierNyalaPolice,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCNP_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 45 Pearls for Chevalier Nyala Yellow Taxi
+    {
+         Pearls=45,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierNyalaYellowTaxi,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCNTY_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 45 Pearls for Chevalier Nyala Green Taxi
+    {
+         Pearls=45,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierNyalaGreenTaxi,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCNTG_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Chevalier D6
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierD6,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCDN_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Chevalier D6 McCoy Logging
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierD6Mccoy,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCDMCL_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Dash Rancher
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashRancher,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDR_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Mercia Lang 4000
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:MerciaLang4000,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingML_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Chevalier D6 Fire Dept
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierD6Fire,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCDFD_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 50 Pearls for Chevalier D6 Park Ranger
+    {
+         Pearls=50,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierD6Ranger,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCDPR_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Dash Bulldriver
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashBulldriver,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDBN_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Dash Bulldriver McCoy Logging Company
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashBulldriverMcCoy,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDBMCLC_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValuline,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFV_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline 6-Seater
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValuline6Seater,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVSS_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Ambulance
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineAmbulance,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVA_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Radio Van
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineRadioVan,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVRV_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline 3N Radio Van
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValuline3N,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVNRV_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Spiffo's
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineSpiffo,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVS_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Transit
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineTransit,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVT_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Mass GenFac
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineMass,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVMGF_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Knox Distillery
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineKnox,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVKD_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Lectro Max
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineLectroMax,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVLM_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 60 Pearls for Franklin Valuline Fossoil
+    {
+         Pearls=60,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinValulineFossoil,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFVF_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 65 Pearls for Dash Elite
+    {
+         Pearls=65,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashElite,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDE_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 65 Pearls for Dash Bulldriver Fossoil/Ranger
+    {
+         Pearls=65,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashBulldriverRanger,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDBFR_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 65 Pearls for Dash Bulldriver Fire Dept.
+    {
+         Pearls=65,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashBulldriverFire,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDBFD_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 65 Pearls for Dash Bulldriver Police
+    {
+         Pearls=65,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:DashBulldriverPolice,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingDBP_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 65 Pearls for Chevalier Primani
+    {
+         Pearls=65,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierPrimani,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCP_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 75 Pearls for Franklin All-Terrain
+    {
+         Pearls=75,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:FranklinAllTerrain,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingFAT_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 75 Pearls for Chevalier Cossette
+    {
+         Pearls=75,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierCossette,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCC_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 100 Pearls for Chevalier Step Van
+    {
+         Pearls=100,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierStepVan,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCSVN_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 100 Pearls for Chevalier Step Van Mail
+    {
+         Pearls=100,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierStepVanMail,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCSVM_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 100 Pearls for Chevalier Step Van Kentucky Herald
+    {
+         Pearls=100,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierStepVanHerald,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCSVKH_OnCreate,
+         RemoveResultItem:True,
+    }
+
+    recipe Sell 100 Pearls for Chevalier Step Van Scarlet Oak Distillery
+    {
+         Pearls=100,
+         keep WalkieTalkie4/WalkieTalkie5/HamRadio1/HamRadio2/HamRadioMakeShift,
+
+         Result:ChevalierStepVanScarlet,
+         Time:10.0,
+         Category:Trading,
+         OnCreate:CarCraftingCSVSOD_OnCreate,
+         RemoveResultItem:True,
+    }
+}

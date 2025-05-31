@@ -1,0 +1,30 @@
+module Base
+{
+	model Gold_Ingot
+	{
+		mesh = WorldItems/ingot,
+		texture = WorldItems/goldIngotTexture,
+		scale = 0.0025,
+	}
+
+	model Silver_Ingot
+	{
+		mesh = WorldItems/ingot,
+		texture = WorldItems/SilverIngotTexture,
+		scale = 0.0025,
+	}
+
+	model Gold_Scrap
+	{
+		mesh = WorldItems/nugget,
+		texture = WorldItems/goldNuggetTexture,
+		scale = 0.2,
+	}
+
+	model Silver_Scrap
+	{
+		mesh = WorldItems/nugget,
+		texture = WorldItems/silverNuggetTexture,
+		scale = 0.2,
+	}
+}

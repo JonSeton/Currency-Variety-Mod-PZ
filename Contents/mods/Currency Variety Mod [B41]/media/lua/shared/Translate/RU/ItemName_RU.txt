@@ -1,0 +1,9 @@
+ItemName_RU = {
+
+	ItemName_Base.GoldBar = "Слиток золота",
+	temName_Base.SilverBar = "Слиток серебра",
+	ItemName_Base.GoldScraps = "Лом золота",
+	ItemName_Base.SilverScraps = "Лом серебра",
+	ItemName_Base.GemScrap = "Россыпь самоцветов",
+	
+}
