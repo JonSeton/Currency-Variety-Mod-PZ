@@ -7,11 +7,6 @@ Valuables can be traded remotely using:
 
 - All HAM radios
 
-🛠️ Compatibility
-- Currently supports Project Zomboid Build 41
-
-- Not yet compatible with earlier or experimental builds
-
 📦 Features
 - Valuable Currencies: Introduce gold bars, silver bars, gems, and pearls as tradeable currencies.
 
@@ -21,6 +16,11 @@ Valuables can be traded remotely using:
 - Official Expansions: The mod has several expansions, including integrations with Autotsar mods. Explore the full collection [here](https://steamcommunity.com/workshop/filedetails/?id=2750649304).
 
 - Supported Languages: English, Russian, Chinese, Spanish, and Portuguese.
+
+🛠️ Compatibility
+- Currently supports Project Zomboid Build 41
+
+- Not yet compatible with earlier or experimental builds
 
 📊 Stats
 | Metric                      | Value    |
