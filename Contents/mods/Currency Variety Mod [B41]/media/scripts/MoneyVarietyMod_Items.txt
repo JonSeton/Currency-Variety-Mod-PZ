@@ -24,7 +24,6 @@ module Base
           DisplayName     = Gold Scraps,
           icon 			      = GoldScraps,
           Type    	     	= Normal,
-          WorldStaticModel = Gold_Scrap,
       }
 
   item SilverScraps
@@ -33,7 +32,6 @@ module Base
           DisplayName     = Silver Scraps,
           icon 		       	= SilverScraps,
           Type        		= Normal,
-          WorldStaticModel = Silver_Scrap,
       }
 
   item GemScrap
