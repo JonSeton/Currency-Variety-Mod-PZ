@@ -13,18 +13,4 @@ module Base
 		texture = WorldItems/SilverIngotTexture,
 		scale = 0.0025,
 	}
-
-	model Gold_Scrap
-	{
-		mesh = WorldItems/nugget,
-		texture = WorldItems/goldNuggetTexture,
-		scale = 0.2,
-	}
-
-	model Silver_Scrap
-	{
-		mesh = WorldItems/nugget,
-		texture = WorldItems/silverNuggetTexture,
-		scale = 0.2,
-	}
 }
